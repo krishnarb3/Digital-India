@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />-->
+    <link href="css/main.css" rel="stylesheet" />
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">-->
+
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Include the AngularJS library -->
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    
+  </head>
+  <body ng-app="CENSUSx">
+
+  	<div class="jumbotron">
+
+  		<div class="container">
+  			<div class="row">
+  				<h1>Stats for 2015 census </h1>
+  			</div>
+  		</div>
+
+  		<br>
+  		<br>
+  		
+
+  		<div class="container" id="maincontainer" ng-controller="StatsController">
+  			
+  			<ul class="nav nav-pills nav-justified">
+				<li onclick="pieAgeLoad()"><a href="#Age" data-toggle="tab">Age</a></li>
+				<li onclick="pieDisLoad()"><a href="#Disability" data-toggle="tab">Disability</a></li>
+				<li onclick="pieEduLoad()"><a href="#Education" data-toggle="tab">Education</a></li>
+				<li onclick="pieRelLoad()"><a href="#Religion" data-toggle="tab">Religion</a></li>
+				<li onclick="pieMarLoad()"><a href="#MaritalStatus" data-toggle="tab">MaritalStatus</a></li>
+				<li onclick="pieMotLoad()"><a href="#MotherTongue" data-toggle="tab">MotherTongue</a></li>
+				<li onclick="pieSexLoad()"><a href="#Sex" data-toggle="tab">Sex</a></li>
+
+			</ul>
+
+			<div class="tab-content">
+				<div class="tab-pane fade in active" id="Age">
+					<div id="agechartdiv" class="chart"></div>
+				</div>
+				<div class="tab-pane fade"  id="Disability">
+					<div id="dischartdiv" class="chart"></div>
+				</div>
+				<div class="tab-pane fade"  id="Education">
+					<div id="educhartdiv" class="chart"></div>
+				</div>
+				<div class="tab-pane fade"  id="Religion">
+					<div id="relchartdiv" class="chart"></div>
+				</div>
+				<div class="tab-pane fade"  id="MaritalStatus">
+					<div id="marchartdiv" class="chart"></div>
+				</div>
+				<div class="tab-pane fade"  id="MotherTongue">
+					<div id="motchartdiv" class="chart"></div>
+				</div>
+				<div class="tab-pane fade"  id="Sex">
+					<div id="sexchartdiv" class="chart"></div>
+				</div>
+			</div>
+  		</div>
+  	</div>
+
+     <!-- Modules -->
+    <script src="js/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controllers/StatsController.js"></script>
+
+    <!-- Services -->
+    <script src="js/services/dataReceiver.js"></script>
+
+    <!-- Directives -->
+
+    <!-- for the pie charts -->
+    <script type="text/javascript" src="js/shared/amcharts.js"></script>
+    <script type="text/javascript" src="js/shared/pie.js"></script>
+    <script type="text/javascript" src="js/shared/light.js"></script>
+
+    <script type="text/javascript" src="js/piescript.js"></script> 
+   
+    <!--bootstrap/ jquery files -->
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+
+
+  </body>
+</html>

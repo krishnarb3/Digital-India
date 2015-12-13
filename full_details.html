@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />-->
+    <link href="css/main.css" rel="stylesheet" />
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">-->
+
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Include the AngularJS library -->
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    
+  </head>
+  <body ng-app="CENSUSx"  ng-controller="StatsController">
+
+  	<header>
+    <div class="jumbotron">
+      <div class="container">
+        <h3>List of all details. For staff only.</h3>
+      </div> 
+    </div> 
+    </header>
+
+  		<br>
+  		<br>
+      <div class="row">
+        <div class="col-md-2">
+          <div class="well">
+            Search: <input ng-model="query"> <br><br>
+          </div>
+        </div>
+
+        <div class="col-md-10">
+          <div class="container" ng-repeat = "member in content | filter: query">
+            <div class="panel panel-default panel-danger">
+            <!-- Default panel contents -->
+            <div class="panel-heading"> Family Id : {{ member.familyId | uppercase }} |  Member Name :{{ member.name | uppercase }} </div>
+            <div class="panel-body">
+            <p> Other details of person </p>
+            </div>
+
+            <ul class="list-group">
+              <li class="list-group-item"> relationshipToHead : {{ member.relationshipToHead }} </li>
+              <li class="list-group-item"> sex : {{ member.sex }} </li>
+              <li class="list-group-item"> dob : {{ member.dob }} </li>
+              <li class="list-group-item"> age : {{ member.age }} </li>
+              <li class="list-group-item"> maritalStatus : {{ member.maritalStatus }} </li>
+              <li class="list-group-item"> ageAtMarriage : {{ member.ageAtMarriage }} </li>
+              <li class="list-group-item"> religion : {{ member.religion }} </li>
+              <li class="list-group-item"> caste : {{ member.caste }} </li>
+              <li class="list-group-item"> disability : {{ member.disability }} </li>
+              <li class="list-group-item"> motherTongue : {{ member.motherTongue }} </li>
+              <li class="list-group-item"> literacyStatus : {{ member.literacyStatus }} </li>
+              <li class="list-group-item"> educationLevel : {{ member.educationLevel }} </li>
+              <li class="list-group-item"> literacyStatus : {{ member.literacyStatus }} </li>
+              <li class="list-group-item"> occupation : {{ member.occupation }} </li>
+              <li class="list-group-item"> nonEconomicActivity : {{ member.nonEconomicActivity }} </li>
+              <li class="list-group-item"> modeOfTravel : {{ member.modeOfTravel }} </li>
+              <li class="list-group-item"> noOfChildren : {{ member.noOfChildren }} </li>
+            </ul>
+          </div>
+
+
+
+          </div>
+
+        </div>
+      </div>
+  		
+
+
+
+     <!-- Modules -->
+    <script src="js/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controllers/StatsController.js"></script>
+
+    <!-- Services -->
+    <script src="js/services/dataReceiver.js"></script>
+
+    <!-- Directives -->
+
+    <!-- for the pie charts -->
+    <script type="text/javascript" src="js/shared/amcharts.js"></script>
+    <script type="text/javascript" src="js/shared/pie.js"></script>
+    <script type="text/javascript" src="js/shared/light.js"></script>
+
+    <script type="text/javascript" src="js/piescript.js"></script> 
+   
+    <!--bootstrap/ jquery files -->
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+
+
+  </body>
+</html>
